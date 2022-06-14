@@ -7,7 +7,7 @@ from time import time
 
 def bogo_sort(array: List[int]):
     """Takes a int list and then tries to sort it by using bogosort, it prints the execution time, the sorted array and the average number of times expected"""
-    tempo_antes = time()
+    pre_time = time()
     print(array)
     counter = 0
     avg = factorial(len(array))
@@ -23,8 +23,8 @@ def bogo_sort(array: List[int]):
         print(
             f"ARRAY SORTED: {array} TOTAL TIMES: {counter} AVERAGE TIMES EXPECTED: {avg}"
         )
-        tempo_depois = time()
-        print(f"EXECUTION TIME: {tempo_depois - tempo_antes:.2f}s")
+        pos_time = time()
+        print(f"EXECUTION TIME: {pos_time - pre_time:.2f}s")
         exit()
 
 
@@ -41,10 +41,10 @@ def shuffle_array(array: List[int]) -> List[int]:
 
 def is_sorted(array: List[int]) -> bool:
     """Verify if an given List of integers is sorted or not"""
-    anterior = NEGATIVE_INFINITE
+    pre_num = NEGATIVE_INFINITE
     for number in array:
-        if number >= anterior:
-            anterior = number
+        if number >= pre_num:
+            pre_num = number
         else:
             return False
     return True
@@ -52,10 +52,10 @@ def is_sorted(array: List[int]) -> bool:
 
 def random_array(array_len: int, gap: tuple) -> List[int]:
     """Generate a random List of integers from a given length and range(gap)"""
-    array_gerado = []
+    generated_arr = []
     for _ in range(array_len):
-        array_gerado.append(randint(gap[0], gap[1]))
-    return array_gerado
+        generated_arr.append(randint(gap[0], gap[1]))
+    return generated_arr
 
 if __name__ == '__main__':
     bogo_sort(random_array(8, (-1000, 1000)))
