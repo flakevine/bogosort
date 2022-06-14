@@ -28,7 +28,8 @@ def bogo_sort(array: List[int]):
         exit()
 
 
-def shuffle_array(array: List[int]):
+def shuffle_array(array: List[int]) -> List[int]:
+    """Shuffle an array randomly from given List of integers."""
     length = len(array)
     for i in range(length):
         new_position = randint(0, length - 1)
@@ -38,7 +39,8 @@ def shuffle_array(array: List[int]):
     return array
 
 
-def is_sorted(array: List[int]):
+def is_sorted(array: List[int]) -> bool:
+    """Verify if an given List of integers is sorted or not"""
     anterior = NEGATIVE_INFINITE
     for number in array:
         if number >= anterior:
@@ -48,11 +50,12 @@ def is_sorted(array: List[int]):
     return True
 
 
-def random_array(array_len: int, gap: tuple):
+def random_array(array_len: int, gap: tuple) -> List[int]:
+    """Generate a random List of integers from a given length and range(gap)"""
     array_gerado = []
     for _ in range(array_len):
         array_gerado.append(randint(gap[0], gap[1]))
     return array_gerado
 
-
-bogo_sort(random_array(8, (-1000, 1000)))
+if __name__ == '__main__':
+    bogo_sort(random_array(8, (-1000, 1000)))
