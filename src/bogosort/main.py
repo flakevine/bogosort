@@ -1,9 +1,9 @@
 from math import factorial
 from random import randint
-from supernumbers import NEGATIVE_INFINITE
 from typing import List
 from time import time
 
+from .supernumbers import NEGATIVE_INFINITE
 
 def bogo_sort(array: List[int]):
     """Takes a int list and then tries to sort it by using bogosort, it prints the execution time, the sorted array and the average number of times expected"""
@@ -25,7 +25,7 @@ def bogo_sort(array: List[int]):
         )
         pos_time = time()
         print(f"EXECUTION TIME: {pos_time - pre_time:.2f}s")
-        exit()
+        return array
 
 
 def shuffle_array(array: List[int]) -> List[int]:
